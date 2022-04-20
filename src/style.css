@@ -1,5 +1,4 @@
 /* /scr/styles.css  */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,13 +16,16 @@ ul {
 }
 
 /* navbar */
-
 header.navbar {
   height: 80px;
   background-color: #00004c;
   display: flex;
   padding: 0 10em;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .navbar a {
@@ -43,8 +45,66 @@ header.navbar {
   font-weight: 700;
 }
 
-/* footer */
+/* main content */
+.mainContent {
+  margin-top: 8em;
+  padding: 0 2.5em;
+  margin-bottom: 4em;
+}
 
+/* pokemon list */
+#pokemons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.35em;
+}
+
+.aLikes {
+  color: black;
+}
+
+.onePoke {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #00004c 1px solid;
+  background-color: #a0eaea;
+  padding: 0.5em 0.75em;
+  border-radius: 5px;
+}
+
+.divImage {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.divImage,
+.divImage img {
+  width: 100%;
+}
+
+.divName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+}
+
+.divBtns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.divBtns button {
+  margin: 0.35em 0;
+  padding: 0.35em;
+}
+
+/* footer */
 footer {
   height: 40px;
   padding-left: 2em;
