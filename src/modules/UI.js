@@ -1,4 +1,5 @@
 // /scr/modules/ui.js - USER INTERFACE class, deals with all modifications to the DOM
+
 export default class UI {
   static addPokemonUI(pokemon) {
     const list = document.querySelector('#pokemons');
@@ -32,6 +33,8 @@ export default class UI {
     divBtns.className = 'divBtns';
     const comment = document.createElement('button');
     comment.textContent = 'Comments';
+    comment.setAttribute('id', `comment-${pokemon.id}`);
+    comment.className = 'commentBtn';
     const reservations = document.createElement('button');
     reservations.textContent = 'Reservations';
     divBtns.appendChild(comment);
@@ -47,5 +50,18 @@ export default class UI {
     const list = document.querySelector('#pokemons');
     list.innerHTML = '';
     pokemons.forEach((pokemon) => this.addPokemonUI(pokemon));
+  }
+
+  static addInfoModal(pokemon) {
+    const modImg = document.querySelector('#modImage');
+    modImg.setAttribute('src', `${pokemon.image}`);
+    const modH2 = document.querySelector('#modH2');
+    modH2.textContent = `${pokemon.name}`;
+    const modId = document.querySelector('#modId');
+    modId.textContent = `ID: ${pokemon.id}`;
+    const modH = document.querySelector('#modH');
+    modH.textContent = `Height: ${pokemon.height}`;
+    const modW = document.querySelector('#modW');
+    modW.textContent = `Height: ${pokemon.weight}`;
   }
 }
