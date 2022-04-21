@@ -149,7 +149,7 @@ footer {
   font-weight: bold;
 }
 
-.modalContent main {
+.modalContent section {
   display: flex;
   flex-direction: column;
   justify-content: center;
