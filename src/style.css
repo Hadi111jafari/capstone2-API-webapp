@@ -63,6 +63,10 @@ header.navbar {
   color: black;
 }
 
+.aLikes span {
+  margin-left: 0.5em;
+}
+
 .onePoke {
   display: flex;
   flex-direction: column;
@@ -131,6 +135,7 @@ footer {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
 }
 
 .modalContent {
@@ -139,7 +144,6 @@ footer {
   padding: 20px;
   border: 1px solid #888;
   width: 70%;
-  height: 90%;
 }
 
 .close {
@@ -186,4 +190,40 @@ footer {
 
 #commentsList {
   border: #00004c 1px solid;
+  width: 70%;
+  margin: 1em auto;
+  max-height: 70px;
+  overflow-y: scroll;
+  padding: 0.25em;
+}
+
+ul#commentsList li:nth-child(odd) {
+  background-color: rgb(201, 199, 199);
+}
+
+.pokeC {
+  padding-left: 0.5em;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#addComment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0.5em auto;
+}
+
+#addComment input {
+  width: 60%;
+  margin: 0.35em 0;
+}
+
+#userComment {
+  height: 50px;
 }

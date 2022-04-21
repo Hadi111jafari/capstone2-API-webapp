@@ -4,6 +4,8 @@ import './style.css';
 import Pokemon from './modules/pokemon.js';
 import UI from './modules/UI.js';
 import PokemonAPI from './modules/pokemonAPI.js';
+import InvolvementAPI from './modules/involvementAPI.js';
+import PokeComment from './modules/pokeComment.js';
 
 // variables
 const pokeList = [];
@@ -12,8 +14,27 @@ const modal = document.getElementById('myModal');
 const closeBtn = document.querySelector('.close');
 
 // methods
+const transform2pokeComments = (comment) => {
+  const trinity = new PokeComment(comment.username, comment.creation_date, comment.comment);
+  return trinity;
+};
+
 const transform2poke = (elem) => {
-  const neo = new Pokemon(elem.id, elem.name, elem.height, elem.weight, elem.sprites.front_default);
+  const neo = new Pokemon(elem.id, elem.name, elem.height, elem.weight, elem.sprites.front_default,
+    elem.sprites.back_default);
+  InvolvementAPI.getComments(neo.id).then((res) => {
+    // console.log('-->index.js - ', res);
+    if (res.length >= 1) {
+      const commentList = res;
+      commentList.forEach((comment) => {
+        const morfeus = transform2pokeComments(comment);
+        neo.comments.push(morfeus);
+        neo.commentsCounter += 1;
+        // console.log('-->index.js - getComments() - comment-', i, ': ', comment);
+      });
+    }
+  })
+    .catch((error) => error);
   pokeList.push(neo);
 };
 
