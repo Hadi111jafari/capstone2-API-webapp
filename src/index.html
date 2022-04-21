@@ -29,5 +29,37 @@
     <footer>
         <p>Created by Microverse under the CC license</p>
     </footer>
+    <div id="myModal" class="modal">
+        <div class="modalContent">
+            <a href="#">
+                <span class="close">&times;</span>
+            </a>
+            <section>
+                <div class="modImg">
+                    <img src="#" alt="" id="modImage">
+                </div>
+                <div class="modInfo">
+                    <h2 id="modH2"></h2>
+                    <div class="modStats">
+                        <p id="modId"></p>
+                        <p id="modH"></p>
+                        <p id="modW"></p>
+                    </div>
+                </div>
+                <div class="modComments">
+                    <h3 id="commentsCounter">Comments</h3>
+                    <ul id="commentsList"></ul>
+                </div>
+                <div class="commentForm">
+                    <h3>Add a comment</h3>
+                    <form action="submit" id="addComment">
+                        <input type="text" name="userName" id="userName">
+                        <input type="text" name="userComment" id="userComment">
+                        <button class="commentBtn">Comment</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 </html>
