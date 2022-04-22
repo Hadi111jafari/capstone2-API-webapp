@@ -3,7 +3,8 @@
 export default class InvolvementAPI {
   static baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 
-  static appKey = '6EARLHJYvrvfUKinMeCd';
+  static appKey = 'qv8KnQaoWUVJfj8Oz7Qq';
+  // static appKey = '6EARLHJYvrvfUKinMeCd';
 
   static likesEnd = '/likes';
 
@@ -13,8 +14,24 @@ export default class InvolvementAPI {
     const commentsURL = `${this.baseURL}${this.appKey}${this.commentsEnd}?item_id=${id}`;
     const response = await fetch(commentsURL);
     const data = response.json();
-    // console.log('-->involvementAPI.js - getComments - data: ', data);
     return data;
+  }
+
+  static async postLike(id) {
+    const like2send = {
+      item_id: `${id}`,
+    };
+    const newLikeURL = `${this.baseURL}${this.appKey}${this.likesEnd}`;
+
+    const response = await fetch(newLikeURL, {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(like2send),
+    });
+
+    return response;
   }
 
   static async getLIkes() {
