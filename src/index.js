@@ -23,14 +23,12 @@ const transform2poke = (elem) => {
   const neo = new Pokemon(elem.id, elem.name, elem.height, elem.weight, elem.sprites.front_default,
     elem.sprites.back_default);
   InvolvementAPI.getComments(neo.id).then((res) => {
-    // console.log('-->index.js - ', res);
     if (res.length >= 1) {
       const commentList = res;
       commentList.forEach((comment) => {
         const morfeus = transform2pokeComments(comment);
         neo.comments.push(morfeus);
         neo.commentsCounter += 1;
-        // console.log('-->index.js - getComments() - comment-', i, ': ', comment);
       });
     }
   })
@@ -71,7 +69,6 @@ const initPoke = () => {
       getLikesAPI();
     })
     .catch((error) => error);
-  // getLikesAPI();
 };
 
 // Event: on content load
@@ -88,11 +85,21 @@ document.querySelector('#pokemons').addEventListener('click', (e) => {
     const idArr = idstr.split('-');
     const id = idArr[1];
     pokeList.forEach((poke) => {
-      // console.log('-->index.js - poke.id: ', poke.id, ' and id:', id);
       if (poke.id === parseInt(id, 10)) {
-        // console.log('-->index.js - poke: ', poke);
         UI.addInfoModal(poke);
         modal.style.display = 'block';
+      }
+    });
+  }
+
+  if (classesArr.indexOf('likeIcn') !== -1) {
+    const li = e.target.parentElement.parentElement.parentElement;
+    const { id } = li.dataset;
+    InvolvementAPI.postLike(id);
+    pokeList.forEach((pokemon) => {
+      if (parseInt(pokemon.id, 10) === parseInt(id, 10)) {
+        pokemon.likesCounter += 1;
+        UI.updateLikesCounter(id);
       }
     });
   }

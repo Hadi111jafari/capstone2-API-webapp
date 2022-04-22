@@ -1,5 +1,4 @@
 // /scr/modules/ui.js - USER INTERFACE class, deals with all modifications to the DOM
-
 export default class UI {
   static addPokemonUI(pokemon) {
     const list = document.querySelector('#pokemons');
@@ -24,7 +23,7 @@ export default class UI {
     aLikes.setAttribute('id', `like-${pokemon.id}`);
     aLikes.className = 'aLikes';
     const icon = document.createElement('i');
-    icon.className = 'fas fa-heart';
+    icon.className = 'fas fa-heart likeIcn';
     // display likes counter
     const spanLikes = document.createElement('span');
     spanLikes.textContent = pokemon.likesCounter;
@@ -36,7 +35,7 @@ export default class UI {
     const divBtns = document.createElement('div');
     divBtns.className = 'divBtns';
     const comment = document.createElement('button');
-    comment.textContent = `Comments (${pokemon.commentsCounter})`;
+    comment.textContent = 'Comment';
     comment.setAttribute('id', `comment-${pokemon.id}`);
     comment.className = 'commentBtn';
     const reservations = document.createElement('button');
@@ -106,5 +105,14 @@ export default class UI {
     textCtitle = `Comments (${pokemon.commentsCounter})`;
     commentsTitle.textContent = textCtitle;
     this.displayCommentsMod(pokemon.comments);
+  }
+
+  static updateLikesCounter(id) {
+    const aLike = document.querySelector(`#like-${id}`);
+    aLike.classList.replace('aLikesBlack', 'aLikesRed');
+    const span = aLike.children[1];
+    let counter = parseInt(span.textContent, 10);
+    counter += 1;
+    span.textContent = counter;
   }
 }
