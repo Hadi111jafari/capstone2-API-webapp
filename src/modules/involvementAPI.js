@@ -5,7 +5,7 @@ export default class InvolvementAPI {
 
   static appKey = '6EARLHJYvrvfUKinMeCd';
 
-  static likesEnd = '/likes/';
+  static likesEnd = '/likes';
 
   static commentsEnd = '/comments';
 
@@ -14,6 +14,13 @@ export default class InvolvementAPI {
     const response = await fetch(commentsURL);
     const data = response.json();
     // console.log('-->involvementAPI.js - getComments - data: ', data);
+    return data;
+  }
+
+  static async getLIkes() {
+    const likesURL = `${this.baseURL}${this.appKey}${this.likesEnd}`;
+    const response = await fetch(likesURL);
+    const data = response.json();
     return data;
   }
 }
