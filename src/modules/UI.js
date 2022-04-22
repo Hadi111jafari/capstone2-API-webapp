@@ -48,11 +48,13 @@ export default class UI {
     li.appendChild(divBtns);
     list.appendChild(li);
   }
+
   static displayPokesUI(pokemons) {
     const list = document.querySelector('#pokemons');
     list.innerHTML = '';
     pokemons.forEach((pokemon) => this.addPokemonUI(pokemon));
   }
+
   static addCommmentMod(pComment) {
     const cList = document.querySelector('#commentsList');
     const li = document.createElement('li');
@@ -63,6 +65,7 @@ export default class UI {
     li.appendChild(p);
     cList.appendChild(li);
   }
+
   static displayEmptyCommentsMessage() {
     const cList = document.querySelector('#commentsList');
     const li = document.createElement('li');
@@ -73,6 +76,7 @@ export default class UI {
     li.appendChild(p);
     cList.appendChild(li);
   }
+
   static displayCommentsMod(comments) {
     const list = document.querySelector('#commentsList');
     list.innerHTML = '';
@@ -82,6 +86,7 @@ export default class UI {
       comments.forEach((comment) => this.addCommmentMod(comment));
     }
   }
+
   static addInfoModal(pokemon) {
     const modImg = document.querySelector('#modImage');
     modImg.setAttribute('src', `${pokemon.image}`);
@@ -101,6 +106,7 @@ export default class UI {
     commentsTitle.textContent = textCtitle;
     this.displayCommentsMod(pokemon.comments);
   }
+
   static updateLikesCounter(id) {
     const aLike = document.querySelector(`#like-${id}`);
     aLike.classList.replace('aLikesBlack', 'aLikesRed');
