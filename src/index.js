@@ -38,6 +38,25 @@ const transform2poke = (elem) => {
   pokeList.push(neo);
 };
 
+const getLikesAPI = () => {
+  InvolvementAPI.getLIkes().then((res) => {
+    if (res.length >= 1) {
+      const likesArr = res;
+      likesArr.forEach((like) => {
+        const idLike = like.item_id;
+        const amountLikes = like.likes;
+        pokeList.forEach((pokemon) => {
+          if (parseInt(pokemon.id, 10) === parseInt(idLike, 10)) {
+            pokemon.likesCounter = parseInt(amountLikes, 10);
+            const pokeLi = document.querySelector(`#poke-${pokemon.id}`);
+            pokeLi.children[1].children[1].children[1].textContent = amountLikes;
+          }
+        });
+      });
+    }
+  });
+};
+
 const initPoke = () => {
   PokemonAPI.getInitialList().then((res) => {
     const tempList = res.results;
@@ -48,7 +67,11 @@ const initPoke = () => {
       });
     });
   })
+    .then(() => {
+      getLikesAPI();
+    })
     .catch((error) => error);
+  // getLikesAPI();
 };
 
 // Event: on content load
