@@ -1,20 +1,29 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
 # capstone2-API-webapp
 
-> The JavaScript capstone project is about building your web application based on an external API. We will select an API that provides data about a topic that we like and then build the webapp around it.!You can find project at live link
+> This project is a web application based on an external API. We selected an API that provides data about Pokemon based on [PokeAPI](https://pokeapi.co/).
+
+<img src="https://user-images.githubusercontent.com/6587226/164884732-a8f75848-ef82-4900-bb22-f501f1eac778.png" width="500">
+<img src="https://user-images.githubusercontent.com/6587226/164884774-04c3a30e-7262-4830-a834-346eec57ee11.png" width="500">
+<img src="https://user-images.githubusercontent.com/6587226/164884799-cc8d6560-0464-4bc2-aa21-91fe95a20929.png" width="500">
+
+This web app displays a list of pokemons. Users can like thier favorite pokemons and make comments thier opinions about them.
+
 
 ## Built With
 
 - HTML
 - CSS
-- JavaScripts
+- JavaScript
 - GitFlow
 - Linters
 - Webpack
-- Jest
+- Jest for testing
 
 ## Live Demo
 
-[Live Demo Link]()
+[Click here!](http://hadi111jafari.github.io/capstone2-API-webapp/)
 
 ## Development set up
 
@@ -49,13 +58,12 @@ launch project locally with
 - Twitter: [@twitterhandle](https://twitter.com/HadiJaf62814146)
 - Linked In: [LinkedIn](https://www.linkedin.com/in/abdul-hadi-jafari-85bb4b199/)
 
-👤 **Elmer**
+👤 **Elmer Lopez**
 
 
 - GitHub: [@githubhandle](https://github.com/memelopez)
-
-- Twitter: [@twitterhandle]()
-- LinkedIn: [LinkedIn]()
+- Twitter: [@memelopez10](https://twitter.com/memelopez10)
+- LinkedIn: [Elmer Lopez](https://www.linkedin.com/in/elmer-lopez-51b187200/)
 
 ## 🤝 Contributing
 
