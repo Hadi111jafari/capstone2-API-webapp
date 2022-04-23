@@ -1,0 +1,230 @@
+/* /scr/styles.css  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* navbar */
+header.navbar {
+  height: 80px;
+  background-color: #00004c;
+  display: flex;
+  padding: 0 10em;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar a {
+  margin: 0 1em;
+}
+
+.forLogo {
+  margin-right: 7em;
+}
+
+.navLinks {
+  display: flex;
+}
+
+.activeNavLink {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* main content */
+.mainContent {
+  margin-top: 8em;
+  padding: 0 4.5em;
+  margin-bottom: 4em;
+}
+
+/* pokemon list */
+#pokemons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.35em;
+}
+
+.aLikes {
+  color: black;
+}
+
+.aLikes span {
+  margin-left: 0.5em;
+}
+
+.onePoke {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #00004c 1px solid;
+  background-color: #a0eaea;
+  padding: 0.5em 0.75em;
+  border-radius: 5px;
+}
+
+.divImage {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.divImage,
+.divImage img {
+  width: 100%;
+}
+
+.divName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+}
+
+.divBtns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.35em;
+}
+
+.divBtns button {
+  margin: 0.35em 0;
+  padding: 0.35em;
+  border: #00004c 1px solid;
+  background-color: white;
+  color: #00004c;
+}
+
+/* footer */
+footer {
+  height: 40px;
+  padding-left: 2em;
+  display: flex;
+  align-items: center;
+  background-color: #00004c;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.modalContent {
+  background-color: #fefefe;
+  margin: 1em auto;
+  padding: 0.65em;
+  border: 1px solid #888;
+  width: 70%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modalContent section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modImg {
+  display: flex;
+  justify-content: center;
+}
+
+.modImg img {
+  width: 25%;
+}
+
+.modInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modStats {
+  width: 70%;
+  margin: 0.85em 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modComments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#commentsList {
+  border: #00004c 1px solid;
+  width: 70%;
+  margin: 1em auto;
+  max-height: 150px;
+  overflow-y: scroll;
+  padding: 0.25em;
+}
+
+ul#commentsList li:nth-child(odd) {
+  background-color: rgb(201, 199, 199);
+}
+
+.pokeC {
+  padding-left: 0.5em;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#addComment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0.5em auto;
+}
+
+#addComment input,
+#addComment textarea {
+  width: 60%;
+  margin: 0.35em 0;
+}
+
+#userComment {
+  height: 50px;
+}
