@@ -192,7 +192,7 @@ footer {
   border: #00004c 1px solid;
   width: 70%;
   margin: 1em auto;
-  max-height: 70px;
+  max-height: 150px;
   overflow-y: scroll;
   padding: 0.25em;
 }
