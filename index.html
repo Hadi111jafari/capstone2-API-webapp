@@ -3,9 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <title>Pokedex</title>
 <script defer src="main.js"></script></head>
 <body>
-    <h1>Hello webpack!</h1>
+    <header class="navbar">
+        <div class="forLogo">
+            <a href="#">
+                <h1>Pokemon</h1>
+            </a>
+        </div>
+        <ul class="navLinks">
+            <li><a href="#" class="activeNavLink" id="pokeNav">Pokemon</a></li>
+            <li><a href="#">Gyms</a></li>
+            <li><a href="#">Trainers</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="mainContent">
+            <ul id="pokemons"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>Created by Microverse under the CC license</p>
+    </footer>
+    <div id="myModal" class="modal">
+        <div class="modalContent">
+            <a href="#">
+                <span class="close">&times;</span>
+            </a>
+            <section>
+                <div class="modImg">
+                    <img src="#" alt="" id="modImage">
+                    <img src="#" alt="" id="modImageback">
+                </div>
+                <div class="modInfo">
+                    <h2 id="modH2"></h2>
+                    <div class="modStats">
+                        <p id="modId"></p>
+                        <p id="modH"></p>
+                        <p id="modW"></p>
+                    </div>
+                </div>
+                <div class="modComments">
+                    <h3 id="commentsCounter">Comments</h3>
+                    <ul id="commentsList"></ul>
+                </div>
+                <div class="commentForm">
+                    <h3 id="commentsTitleMod">Add a comment</h3>
+                    <form action="submit" id="addComment">
+                        <input type="text" name="userName" id="userName" placeholder="Your Name">
+                        <textarea name="userComment" id="userComment" cols="30" rows="10" placeholder="Your insight"></textarea>
+                        <button class="commentBtn">Comment</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 </html>
