@@ -18,6 +18,9 @@ const domHtml = new JSDOM(`<!DOCTYPE html>
         <nav>
             <a href="" id="pokeCount">Pokemon</a>
         </nav>
+        <div>
+            <h3 id="comments"></h3>
+        </div>
     </div>
 </body>
 </html>`, { url: 'https://localhost/' });
