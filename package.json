@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "build": "webpack",
     "start": "webpack serve --open"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Hadi111jafari/capstone2-API-webapp#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
     "csv-loader": "^3.0.3",
@@ -40,6 +41,7 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
+    "jsdom": "^19.0.0",
     "lodash": "^4.17.21"
   }
 }
