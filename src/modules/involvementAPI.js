@@ -40,4 +40,24 @@ export default class InvolvementAPI {
     const data = response.json();
     return data;
   }
+
+  static async postComment(id, comment) {
+    const comment2send = {
+      item_id: `${id}`,
+      username: `${comment.username}`,
+      comment: `${comment.statement}`,
+    };
+
+    const newCommentURL = `${this.baseURL}${this.appKey}${this.commentsEnd}`;
+
+    const response = await fetch(newCommentURL, {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(comment2send),
+    });
+
+    return response;
+  }
 }
