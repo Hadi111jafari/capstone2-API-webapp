@@ -7,17 +7,23 @@
 ### Images
 
 Home page:
+
 <img src="https://user-images.githubusercontent.com/6587226/164884732-a8f75848-ef82-4900-bb22-f501f1eac778.png" width="500">
+
 Pop up:
+
 <img src="https://user-images.githubusercontent.com/6587226/164884774-04c3a30e-7262-4830-a834-346eec57ee11.png" width="500">
+
 Tests:
+
 <img src="https://user-images.githubusercontent.com/6587226/164884799-cc8d6560-0464-4bc2-aa21-91fe95a20929.png" width="500">
 
 This web app displays a list of pokemons. Users can like thier favorite pokemons and make comments about them. Comments and likes are posted to [Involment API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270). A couple of test are made posible using the Jest framework for testing. 
 
 ### Video
 
-<video src='https://drive.google.com/file/d/1Fj7VyjqQHvipC3F_iafIcZLBJtaX8yXt/view?usp=sharing' width=380/>
+A 5 minute video of an overview of our project. [Watch here](https://drive.google.com/file/d/1Fj7VyjqQHvipC3F_iafIcZLBJtaX8yXt/view?usp=sharing).
+
 
 ## Built With
 
