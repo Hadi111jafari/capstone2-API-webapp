@@ -55,6 +55,15 @@ const getLikesAPI = () => {
   });
 };
 
+const displayAmountItemsNav = () => {
+  const pokeA = document.querySelector('#pokeNav');
+  setTimeout(() => {
+    const amountPokes = pokeList.length;
+    const pokeStr = `Pokemon (${amountPokes})`;
+    pokeA.textContent = pokeStr;
+  }, 900);
+};
+
 const initPoke = () => {
   PokemonAPI.getInitialList().then((res) => {
     const tempList = res.results;
@@ -68,8 +77,21 @@ const initPoke = () => {
   })
     .then(() => {
       getLikesAPI();
+      displayAmountItemsNav();
     })
     .catch((error) => error);
+};
+
+const displayAmountCommentsMod = (id) => {
+  let amountComments = -1;
+  pokeList.forEach((pokemon) => {
+    if (parseInt(pokemon.id, 10) === parseInt(id, 10)) {
+      amountComments = pokemon.commentsCounter;
+    }
+  });
+  const h3Comments = document.querySelector('#commentsCounter');
+  const commentsCounterStr = `Comments (${amountComments})`;
+  h3Comments.textContent = commentsCounterStr;
 };
 
 // Event: on content load
@@ -138,9 +160,11 @@ document.querySelector('#addComment').addEventListener('submit', (e) => {
     pokeList.forEach((pokemon) => {
       if (parseInt(pokemon.id, 10) === parseInt(id, 10)) {
         pokemon.comments.push(neo);
+        pokemon.commentsCounter += 1;
       }
     });
     UI.addCommmentMod(neo);
+    displayAmountCommentsMod(id);
   }
 
   document.querySelector('#userName').value = '';
