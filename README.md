@@ -22,7 +22,7 @@ This web app displays a list of pokemons. Users can like thier favorite pokemons
 
 ### Video
 
-A 5 minute video of an overview of our project. [Watch here](https://drive.google.com/file/d/1Fj7VyjqQHvipC3F_iafIcZLBJtaX8yXt/view?usp=sharing).
+A short minute video of an overview of our project. [Watch here](https://drive.google.com/file/d/1WITlWTKFv2thxMKwJ_ohlfDtECpiUpZ6/view?usp=sharing).
 
 
 ## Built With
