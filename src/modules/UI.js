@@ -96,6 +96,7 @@ export default class UI {
     modH2.textContent = `${pokemon.name}`;
     const modId = document.querySelector('#modId');
     modId.textContent = `ID: ${pokemon.id}`;
+    modId.dataset.id = pokemon.id;
     const modH = document.querySelector('#modH');
     modH.textContent = `Height: ${pokemon.height}`;
     const modW = document.querySelector('#modW');

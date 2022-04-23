@@ -61,6 +61,7 @@ const initPoke = () => {
     tempList.forEach((element) => {
       PokemonAPI.get1poke(element.url).then((res) => {
         transform2poke(res);
+        pokeList.sort((a, b) => a.id - b.id);
         UI.displayPokesUI(pokeList);
       });
     });
@@ -108,4 +109,40 @@ document.querySelector('#pokemons').addEventListener('click', (e) => {
 closeBtn.addEventListener('click', (e) => {
   e.preventDefault();
   modal.style.display = 'none';
+});
+
+// modal
+document.querySelector('#addComment').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // get values from inputs
+  const username = document.querySelector('#userName').value.trim();
+  const comment = document.querySelector('#userComment').value.trim();
+  const { id } = document.querySelector('#modId').dataset;
+  // get date
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const date = today.getDate();
+  let tempM = '';
+  if (month < 10) {
+    tempM = `0${month}`;
+  } else {
+    tempM = month;
+  }
+  const dateStr = `${year}-${tempM}-${date}`;
+  const neo = new PokeComment(username, dateStr, comment);
+  // validate inputs
+  if (username !== '' && comment !== '') {
+    InvolvementAPI.postComment(id, neo);
+    pokeList.forEach((pokemon) => {
+      if (parseInt(pokemon.id, 10) === parseInt(id, 10)) {
+        pokemon.comments.push(neo);
+      }
+    });
+    UI.addCommmentMod(neo);
+  }
+
+  document.querySelector('#userName').value = '';
+  document.querySelector('#userComment').value = '';
 });

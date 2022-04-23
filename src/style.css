@@ -48,7 +48,7 @@ header.navbar {
 /* main content */
 .mainContent {
   margin-top: 8em;
-  padding: 0 2.5em;
+  padding: 0 4.5em;
   margin-bottom: 4em;
 }
 
@@ -141,7 +141,7 @@ footer {
 .modalContent {
   background-color: #fefefe;
   margin: 1em auto;
-  padding: 20px;
+  padding: 0.65em;
   border: 1px solid #888;
   width: 70%;
 }
@@ -219,7 +219,8 @@ ul#commentsList li:nth-child(odd) {
   margin: 0.5em auto;
 }
 
-#addComment input {
+#addComment input,
+#addComment textarea {
   width: 60%;
   margin: 0.35em 0;
 }
